@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <script src="function/script.js"></script>
+    <link rel="icon" href="images/favicon_icon.ico" type="image/x-icon">
     <title>Big Mom</title>
 </head>
 <body>
@@ -19,40 +18,125 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li><a class="nav-link" href="catalog.html">Catalog</a></li>
-                <li><a class="nav-link" href="cart.html">Cart</a></li>
             </ul>
+            <button class="signin-button" onclick="window.location.href='reg.html'">Account</button>
         </div>
     </nav>
+
     <div class="container">
         <h1 class="text-center title-h1 mt-5">About Us</h1>
+
         <div class="row gx-4 shop mb-5">
             <h2>Welcome to our furniture store!</h2>
             <img class="dots" src="images/dots.svg" alt="">
             <p>
-                We take pride in helping our customers create coziness and comfort in their homes. Our store specializes in selling high-quality furniture, including sofas, armchairs, and beds. We believe that beautiful and functional furniture is a key element of interior design.
+                We take pride in helping our customers create coziness and comfort in their homes. <br>
+                Our store specializes in selling high-quality furniture, including sofas, armchairs, and beds. <br>
+                We believe that beautiful and functional furniture is a key element of interior design.
             </p>
             <p>
-                Our range includes furniture in various styles, from modern and minimalist to classic and inviting. We carefully select each product to meet the diverse needs and preferences of our customers.
+                Our range includes furniture in various styles, from modern and minimalist to classic and inviting. <br>
+                We carefully select each product to meet the diverse needs and preferences of our customers.
             </p>
             <p>
-                Our sofas, armchairs, and beds are made using only the finest materials. We pay special attention to durability and comfort. We want every customer to feel comfortable and satisfied in their home.
+                Our sofas, armchairs, and beds are made using only the finest materials. <br>
+                We pay special attention to durability and comfort. <br>
+                We want every customer to feel comfortable and satisfied in their home.
             </p>
             <p>
-                Our goal is to make the process of choosing and buying furniture as convenient as possible for you. Our experienced consultants are always ready to help you select furniture that perfectly complements your interior and meets your needs.
+                Our goal is to make the process of choosing and buying furniture as convenient as possible for you. <br>
+                Our experienced consultants are always ready to help you select furniture that perfectly complements your interior and meets your needs.
             </p>
             <p>
-                Thank you for your interest in our store. We invite you to visit us and enjoy a wide selection of furniture, along with excellent service.
+                Thank you for your interest in our store. <br>
+                We invite you to visit us and enjoy a wide selection of furniture, along with excellent service.
             </p>
-            
       </div>
     </div>
+    <div class="con">
+        <h2>FAQs</h2> <br>
+        <div class="wrapper"> 
+            <button class="toggle">
+                What materials are used in your furniture?
+            </button>
+            <div class="content">
+                <p>We use high-quality materials such as genuine leather, eco-leather, textiles, wood and metal to ensure the durability and comfort of our furniture.</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <button class="toggle">
+                How to care for furniture so that it lasts a long time?
+            </button>
+            <div class="content">
+                <p>Care for furniture according to the manufacturer's recommendations. This may include regular cleaning, use of material care products, and avoidance of mechanical damage.</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <button class="toggle">
+                Do you have a guarantee for furniture?
+            </button>
+            <div class="content">
+                <p>Yes, we have a warranty on most of our products. The warranty period may vary depending on the product, but is usually 1-5 years.</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <button class="toggle">
+                What are your delivery times?
+            </button>
+            <div class="content">
+                <p>Delivery times may vary depending on product availability and your location. We strive to deliver orders as quickly as possible and will be happy to provide you with accurate lead times when placing your order.</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <button class="toggle">
+                What tips can you give when choosing furniture for small spaces?
+            </button>
+            <div class="content">
+                <p>If you have limited space, we recommend choosing compact and multifunctional furniture pieces, such as sleeper sofas or beds with storage drawers. Our specialists can also offer you solutions to optimize the use of space.</p>
+            </div>
+        </div>
+
+    </div>
+    <script>let toggles = document.getElementsByClassName('toggle');
+        let contentDiv = document.getElementsByClassName('content');
+        let icons = document.getElementsByClassName('icon');
+        
+        for(let i=0; i<toggles.length; i++){
+            toggles[i].addEventListener('click', ()=>{
+                if( parseInt(contentDiv[i].style.height) != contentDiv[i].scrollHeight){
+                    contentDiv[i].style.height = contentDiv[i].scrollHeight + "px";
+                    toggles[i].style.color = "#0084e9";
+                    icons[i].classList.remove('fa-plus');
+                    icons[i].classList.add('fa-minus');
+                }
+                else{
+                    contentDiv[i].style.height = "0px";
+                    toggles[i].style.color = "#111130";
+                    icons[i].classList.remove('fa-minus');
+                    icons[i].classList.add('fa-plus');
+                }
+        
+                for(let j=0; j<contentDiv.length; j++){
+                    if(j!==i){
+                        contentDiv[j].style.height = "0px";
+                        toggles[j].style.color = "#111130";
+                        icons[j].classList.remove('fa-minus');
+                        icons[j].classList.add('fa-plus');
+                    }
+                }
+            });
+        }
+        </script>
+    <script src="function/script.js"></script>
     <img class="w-100 mt-5 mb-10" src="images/picture.png" alt="Picture">
     <footer class="w-100 mt-5 mb-10">
         <nav class="allLinks">
-            <a class="nav-link" href="about_us.html"><img src="images/about_us_icon.png" alt="" style="width: 2.5%;"></a>
-            <a class="nav-link" href="https://ru-ru.facebook.com/"><img src="images/facebook_icon.png" alt="" style="width: 2.5%;"></a>
-            <a class="nav-link" href="https://twitter.com/?lang=ru"><img src="images/twitter_icon.png" alt="" style="width: 2.5%;"></a>
-            <a class="nav-link" href="https://www.instagram.com/"><img src="images/instagram_icon.png" alt="" style="width: 2.5%;"></a>
+            <div>
+                <a href="about_us.html"><img src="images/about_us_icon.png" alt="" style="width: 2.5%;"></a>
+                <a href="https://ru-ru.facebook.com/"><img src="images/facebook_icon.png" alt="" style="width: 2.5%;"></a>
+                <a href="https://twitter.com/?lang=ru"><img src="images/twitter_icon.png" alt="" style="width: 2.5%;"></a>
+                <a href="https://www.instagram.com/"><img src="images/instagram_icon.png" alt="" style="width: 2.5%;"></a>
+            </div>
         </nav>
     </footer>
 </body>
