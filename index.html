@@ -13,19 +13,29 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.html">Big Mom</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand text-white" href="index.html">Big Mom</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li><a class="nav-link" href="catalog.html">Catalog</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="catalog.html">Catalog</a>
+                </li>
             </ul>
-            <button class="signin-button" onclick="window.location.href='reg.html'">Account</button>
         </div>
+        <!-- dropdown -->
+        <div class="account-dropdown">
+            <button class="btn btn-primary my-2 my-lg-0 ml-auto">Account</button>
+            <div class="dropdown-content">
+              <a href="reg.html">Sign Up</a>
+              <a href="login.html">Log In</a>
+            </div>
+          </div>
     </nav>
-
+     
+    
     <div class="container">
         <h1 class="text-center title-h1 mt-5">Our Fave Kits</h1>
 

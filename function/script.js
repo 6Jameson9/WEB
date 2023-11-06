@@ -1,60 +1,3 @@
-// Функция для отсчета времени и перенаправления на index.html
-function startTimer() {
-    let seconds = 60; // 60 секунд = 1 минута
-
-    const timerElement = document.getElementById('timer');
-    timerElement.textContent = `Redirecting in ${seconds} seconds`;
-
-    const countdown = setInterval(function () {
-        seconds--;
-        timerElement.textContent = `Redirecting in ${seconds} seconds`;
-
-        if (seconds === 0) {
-            clearInterval(countdown); // Остановить таймер
-            window.location.href = 'index.html'; // Перенаправить на index.html
-        }
-    }, 1000); // каждую секунду
-}
-
-// Вызываем функцию для начала отсчета времени
-startTimer();
-
-
-// функция проверяет заполнены ли все поля в login.html
-function validateForm1() {
-    // Получаем значения полей
-    var userName = document.querySelector('input[type="text"]').value;
-    var password = document.querySelector('input[type="password"]').value;
-
-    // Проверяем, заполнены ли поля
-    if (userName === "" || password === "") {
-        alert("Fill in all the fields");
-        return false; // Останавливаем отправку формы
-    }
-
-    return true; // Если все поля заполнены, форма будет отправлена
-    
-}
-
-
-// функция проверяет заполнены ли все поля в reg.html а также проверят совпадение паролей
-function validateForm2() {
-    var userName = document.querySelector('input[type="text"]').value;
-    var email = document.querySelector('input[type="email"]').value;
-    var password = document.querySelector('input[type="password"]').value;
-    var confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
-
-    if (userName === "" || email === "" || password === "" || confirmPassword === "") {
-        alert("Fill in all the fields");
-        return false;
-    }
-    if (password !== confirmPassword) {
-        alert("Password mismatch");
-        return false; // Останавливаем отправку формы)
-    }
-    
-}
-
 // Функция для обновления итоговой суммы
 function updateTotalPrice() {
     const cartItemsList = document.getElementById("cart-items");
@@ -165,3 +108,54 @@ function closeAllModals() {
     });
     clearCart();
 }
+
+// Generate random data
+function generateData() {
+    const data = [];
+    for (let i = 0; i < 5; i++) {
+        data.push(Math.floor(Math.random() * 100));
+    }
+    return data;
+}
+
+// Line Chart
+const lineChartCtx = document.getElementById('line-chart').getContext('2d');
+const lineChart = new Chart(lineChartCtx, {
+    type: 'line',
+    data: {
+        labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
+        datasets: [{
+            label: 'Website Traffic',
+            data: generateData(),
+            borderColor: 'blue',
+            fill: false,
+        }],
+    },
+});
+
+// Bar Chart
+const barChartCtx = document.getElementById('bar-chart').getContext('2d');
+const barChart = new Chart(barChartCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Page 1', 'Page 2', 'Page 3', 'Page 4', 'Page 5'],
+        datasets: [{
+            label: 'Page Views',
+            data: generateData(),
+            backgroundColor: 'green',
+        }],
+    },
+});
+
+// Pie Chart
+const pieChartCtx = document.getElementById('pie-chart').getContext('2d');
+const pieChart = new Chart(pieChartCtx, {
+    type: 'pie',
+    data: {
+        labels: ['Desktop', 'Mobile', 'Tablet', 'Other'],
+        datasets: [{
+            data: generateData(),
+            backgroundColor: ['red', 'blue', 'green', 'yellow'],
+        }],
+    },
+});
